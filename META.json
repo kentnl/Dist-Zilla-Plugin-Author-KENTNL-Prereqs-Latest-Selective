@@ -98,6 +98,11 @@
    "x_Dist_Zilla" : {
       "plugins" : [
          {
+            "class" : "Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective",
+            "name" : "Author::KENTNL::Prereqs::Latest::Selective",
+            "version" : null
+         },
+         {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",
             "name" : "@Author::KENTNL/Git::NextVersion",
             "version" : "1.121820"
@@ -357,11 +362,6 @@
             },
             "name" : "Prereqs",
             "version" : "4.300020"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective",
-            "name" : "Author::KENTNL::Prereqs::Latest::Selective",
-            "version" : null
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
