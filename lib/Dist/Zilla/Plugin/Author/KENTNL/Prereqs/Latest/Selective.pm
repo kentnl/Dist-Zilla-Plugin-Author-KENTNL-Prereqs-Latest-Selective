@@ -23,6 +23,31 @@ sub wanted_latest {
 	return qw( Test::More Module::Build );
 }
 use Data::Dump qw( pp );
+
+sub for_each_dependency {
+	my ( $self, $cpanmeta, $callback ) = @_; 
+
+	my $prereqs = $cpanmeta->{prereqs};
+	for my $phase ( keys %{ $prereqs } ) {
+		my $phase_data = $prereqs->{$phase};
+		for my $type ( keys %{ $phase_data } ) {
+			my $type_data = $phase_data->{$type};
+			for my $package ( keys %{ $type_data } ) {
+				
+				$callback->(
+					$self, 
+					{
+						phase => $phase,
+						type  => $type ,
+						package => $package,
+						version => $type_data->{$package},
+					}
+				);
+			}
+		}
+	}
+}
+
 sub register_prereqs {
 	if ( defined $in_recursion ) { 
 		return;
@@ -35,24 +60,11 @@ sub register_prereqs {
 		skip_isa => [ __PACKAGE__ ],
 	});
 	my $np = $prereqs->cpan_meta_prereqs->clone();
-	for my $phase ( keys %{ $np->{prereqs} } ) {
-		print "\e[31m $phase\n";
-		for my $hardness ( keys %{ $np->{prereqs}->{$phase} } ){
-			print "\e[32m $hardness\n";
-			for my $pkg ( $self->wanted_latest ) {
-				print "\e[33m $pkg\n";
-				next unless exists $np->{prereqs}->{$phase}->{$hardness}->{$pkg};
-				print "\e[34m * \n";
-				my $existing = $np->{prereqs}->{$phase}->{$hardness}->{$pkg};
-				my $md = Module::Data->new( $pkg );
-				pp({
-					have => $existing,
-					want => $md->version,
-				});
-				
-			}
-		}
-	}
+	$self->for_each_dependency($np, sub{
+		my ( $self, $args ) = @_;
+		printf "\e[31m %s > %s > %s = %s \e[0m\n", $args->{phase}, $args->{type}, $args->{package},  $args->{version};
+
+	});
 
 	pp( $np );
 	1;
