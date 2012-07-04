@@ -20,7 +20,7 @@ with expand_modname('-PrereqSource');
 our $in_recursion = undef;
 
 sub wanted_latest {
-	return { map { $_ => 1 } qw(  Test::More Module::Build ) };
+	return { map { $_ => 1 } qw(  Test::More Module::Build Dist::Zilla::PluginBundle::Author::KENTNL` ) };
 }
 
 sub current_version_of { 
