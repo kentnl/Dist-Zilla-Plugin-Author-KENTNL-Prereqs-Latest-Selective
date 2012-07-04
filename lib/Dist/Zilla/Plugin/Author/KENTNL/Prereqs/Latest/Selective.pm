@@ -17,7 +17,7 @@ use Dist::Zilla::Util::EmulatePhase qw( get_prereqs expand_modname );
 
 with expand_modname('-PrereqSource');
 
-our $in_recursion = undef;
+our $in_recursion = 0;
 
 sub wanted_latest {
 	return { map { $_ => 1 } qw(  Test::More Module::Build Dist::Zilla::PluginBundle::Author::KENTNL ) };
