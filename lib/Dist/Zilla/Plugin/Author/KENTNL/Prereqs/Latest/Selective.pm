@@ -32,7 +32,8 @@ sub for_each_dependency {
 		my $phase_data = $prereqs->{$phase};
 		for my $type ( keys %{ $phase_data } ) {
 			my $type_data = $phase_data->{$type};
-			for my $package ( keys %{ $type_data } ) {
+			my $requirements = $type_data->{requirements};
+			for my $package ( keys %{ $requirements } ) {
 				
 				$callback->(
 					$self, 
