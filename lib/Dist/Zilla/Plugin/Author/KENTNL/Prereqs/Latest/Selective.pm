@@ -20,8 +20,14 @@ with expand_modname('-PrereqSource');
 our $in_recursion = undef;
 
 sub wanted_latest {
-	return qw( Test::More Module::Build );
+	return { map { $_ => 1 } qw(  Test::More Module::Build ) };
 }
+
+sub current_version_of { 
+	my ( $self , $package ) = @_;
+	return Module::Data->new( $package )->version;
+}
+
 use Data::Dump qw( pp );
 
 sub for_each_dependency {
@@ -62,13 +68,18 @@ sub register_prereqs {
 		skip_isa => [ __PACKAGE__ ],
 	});
 	my $np = $prereqs->cpan_meta_prereqs->clone();
+
 	$self->for_each_dependency($np, sub{
 		my ( $self, $args ) = @_;
-		printf "\e[31m %s > %s > %s = %s \e[0m\n", $args->{phase}, $args->{type}, $args->{package},  $args->{requirement}->{minimum};
-
+		my $package = $args->{package};
+		if ( exists $self->wanted_latest->{$package} ) {
+			$self->register_prereqs(
+				{ phase => $args->{phase}, type => $args->{type}},
+				$package , $self->current_version_of( $package ),
+			);
+		}
 	});
 
-#	pp( $np );
 	1;
 }
 
