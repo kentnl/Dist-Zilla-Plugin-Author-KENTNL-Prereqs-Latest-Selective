@@ -57,7 +57,8 @@ sub for_each_dependency {
 }
 
 sub register_prereqs {
-	if ( defined $in_recursion ) { 
+	if ( defined $in_recursion ) {
+		warn "Avoiding recursion";
 		return;
 	}
 	local $in_recursion = 1;
