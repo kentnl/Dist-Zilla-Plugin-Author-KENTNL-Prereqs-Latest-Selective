@@ -42,7 +42,7 @@ sub for_each_dependency {
 						phase => $phase,
 						type  => $type ,
 						package => $package,
-						requirement => $type_data->{$package},
+						requirement => $requirements->{$package},
 					}
 				);
 			}
