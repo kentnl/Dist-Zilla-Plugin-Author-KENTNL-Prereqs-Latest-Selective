@@ -70,7 +70,7 @@ sub register_prereqs {
 	my $np = $prereqs->cpan_meta_prereqs->clone();
 
 	$self->for_each_dependency($np, sub{
-		my ( $self, $args ) = @_;
+		my ( $_self, $args ) = @_;
 		my $package = $args->{package};
 		if ( exists $self->wanted_latest->{$package} ) {
 			print "\e[31m Upgrading $package \e[0m\n";
