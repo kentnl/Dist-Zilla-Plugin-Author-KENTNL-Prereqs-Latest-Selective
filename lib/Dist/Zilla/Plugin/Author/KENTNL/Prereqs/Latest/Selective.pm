@@ -32,6 +32,8 @@ sub for_each_dependency {
 		my $phase_data = $prereqs->{$phase};
 		for my $type ( keys %{ $phase_data } ) {
 			my $type_data = $phase_data->{$type};
+			next unless $type_data->isa( 'CPAN::Meta::Requirements' );
+
 			my $requirements = $type_data->{requirements};
 			for my $package ( keys %{ $requirements } ) {
 				
