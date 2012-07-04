@@ -73,6 +73,7 @@ sub register_prereqs {
 		my ( $self, $args ) = @_;
 		my $package = $args->{package};
 		if ( exists $self->wanted_latest->{$package} ) {
+			print "\e[31m Upgraded $package \e[0m\n";
 			$self->register_prereqs(
 				{ phase => $args->{phase}, type => $args->{type}},
 				$package , $self->current_version_of( $package ),
