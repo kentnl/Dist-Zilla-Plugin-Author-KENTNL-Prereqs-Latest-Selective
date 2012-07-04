@@ -29,8 +29,14 @@ sub register_prereqs {
 		with  => [qw( -PrereqSource )],
 		skip_isa => [ __PACKAGE__ ],
 	});
+	my $np = $prereqs->cpan_meta_prereqs->clone();
+	for my $phase ( keys %{ $np->{prereqs} } ) {
+		for my $hardness ( keys %{ $np->{prereqs}->{$phase} } ){
+			
+		}
+	}
 	use Data::Dump qw( pp );
-	pp( $prereqs );
+	pp( $np );
 	1;
 }
 
