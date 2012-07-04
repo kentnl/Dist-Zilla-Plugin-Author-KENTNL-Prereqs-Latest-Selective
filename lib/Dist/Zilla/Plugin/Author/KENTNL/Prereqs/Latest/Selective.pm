@@ -42,7 +42,7 @@ sub for_each_dependency {
 						phase => $phase,
 						type  => $type ,
 						package => $package,
-						version => $type_data->{$package},
+						requirement => $type_data->{$package},
 					}
 				);
 			}
@@ -64,7 +64,7 @@ sub register_prereqs {
 	my $np = $prereqs->cpan_meta_prereqs->clone();
 	$self->for_each_dependency($np, sub{
 		my ( $self, $args ) = @_;
-		printf "\e[31m %s > %s > %s = %s \e[0m\n", $args->{phase}, $args->{type}, $args->{package},  $args->{version};
+		printf "\e[31m %s > %s > %s = %s \e[0m\n", $args->{phase}, $args->{type}, $args->{package},  $args->{requirement}->{minimum};
 
 	});
 
