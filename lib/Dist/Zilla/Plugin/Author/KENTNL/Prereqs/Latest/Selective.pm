@@ -68,7 +68,7 @@ sub register_prereqs {
 
 	});
 
-	pp( $np );
+#	pp( $np );
 	1;
 }
 
