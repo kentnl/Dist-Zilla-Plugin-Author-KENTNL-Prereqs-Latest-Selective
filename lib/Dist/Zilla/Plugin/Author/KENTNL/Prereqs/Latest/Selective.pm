@@ -76,7 +76,7 @@ sub register_prereqs {
 			print "\e[31m Upgrading $package \e[0m\n";
 			my $cv =  $self->current_version_of( $package );
 			print "\e[32m $cv\e[0m\n";
-			$self->register_prereqs(
+			$self->zilla->register_prereqs(
 				{ phase => $args->{phase}, type => $args->{type}},
 				$package , $self->current_version_of( $package ),
 			);

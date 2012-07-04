@@ -55,10 +55,10 @@ eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL::Lite','v1.3.0') }
 eval { $v .= pmver('Dist::Zilla::Util::EmulatePhase','any version') };
 eval { $v .= pmver('File::Find','any version') };
 eval { $v .= pmver('File::Temp','any version') };
-eval { $v .= pmver('Module::Build','0.3601') };
+eval { $v .= pmver('Module::Build','0.4001') };
 eval { $v .= pmver('Module::Data','any version') };
 eval { $v .= pmver('Moose','any version') };
-eval { $v .= pmver('Test::More','0.88') };
+eval { $v .= pmver('Test::More','0.98') };
 eval { $v .= pmver('strict','any version') };
 eval { $v .= pmver('warnings','any version') };
 

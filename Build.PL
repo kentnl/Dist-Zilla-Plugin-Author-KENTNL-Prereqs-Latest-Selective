@@ -9,11 +9,11 @@ my %module_build_args = (
   "build_requires" => {
     "File::Find" => 0,
     "File::Temp" => 0,
-    "Module::Build" => "0.3601",
-    "Test::More" => "0.88"
+    "Module::Build" => "0.4001",
+    "Test::More" => "0.98"
   },
   "configure_requires" => {
-    "Module::Build" => "0.3601"
+    "Module::Build" => "0.4001"
   },
   "dist_abstract" => "Selectively upgrade a few modules to depend on the version used.",
   "dist_author" => [
