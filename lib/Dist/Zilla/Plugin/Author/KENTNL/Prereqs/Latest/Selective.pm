@@ -36,8 +36,11 @@ sub register_prereqs {
 	});
 	my $np = $prereqs->cpan_meta_prereqs->clone();
 	for my $phase ( keys %{ $np->{prereqs} } ) {
+		print "\e[31m $phase\n";
 		for my $hardness ( keys %{ $np->{prereqs}->{$phase} } ){
+			print "\e[32m $hardness\n";
 			for my $pkg ( $self->wanted_latest ) {
+				print "\e[33m $pkg\n";
 				next unless exists $np->{prereqs}->{$phase}->{$hardness}->{$pkg};
 				my $existing = $np->{prereqs}->{$phase}->{$hardness}->{$pkg};
 				my $md = Module::Data->new( $pkg );
