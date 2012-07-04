@@ -56,6 +56,7 @@ eval { $v .= pmver('Dist::Zilla::Util::EmulatePhase','any version') };
 eval { $v .= pmver('File::Find','any version') };
 eval { $v .= pmver('File::Temp','any version') };
 eval { $v .= pmver('Module::Build','0.3601') };
+eval { $v .= pmver('Module::Data','any version') };
 eval { $v .= pmver('Moose','any version') };
 eval { $v .= pmver('Test::More','0.88') };
 eval { $v .= pmver('strict','any version') };

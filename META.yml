@@ -23,6 +23,7 @@ provides:
 requires:
   Data::Dump: 0
   Dist::Zilla::Util::EmulatePhase: 0
+  Module::Data: 0
   Moose: 0
   perl: v5.10.0
   strict: 0
@@ -37,6 +38,7 @@ x_BuiltWith:
     File::Find: 1.20
     File::Temp: 0.22
     Module::Build: 0.4001
+    Module::Data: 0.006
     Moose: 2.0603
     Test::More: 0.98
     perl: 'NA(skipped: perl)'

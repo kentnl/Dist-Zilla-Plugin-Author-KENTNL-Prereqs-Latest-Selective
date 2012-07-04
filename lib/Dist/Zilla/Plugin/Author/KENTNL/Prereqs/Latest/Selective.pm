@@ -12,12 +12,17 @@ BEGIN {
 # ABSTRACT: Selectively upgrade a few modules to depend on the version used.
 
 use Moose;
+use Module::Data;
 use Dist::Zilla::Util::EmulatePhase qw( get_prereqs expand_modname );
 
 with expand_modname('-PrereqSource');
 
 our $in_recursion = undef;
 
+sub wanted_latest {
+	return qw( Test::More Module::Build );
+}
+use Data::Dump qw( pp );
 sub register_prereqs {
 	if ( defined $in_recursion ) { 
 		return;
@@ -32,10 +37,19 @@ sub register_prereqs {
 	my $np = $prereqs->cpan_meta_prereqs->clone();
 	for my $phase ( keys %{ $np->{prereqs} } ) {
 		for my $hardness ( keys %{ $np->{prereqs}->{$phase} } ){
-			
+			for my $pkg ( $self->wanted_latest ) {
+				next unless exists $np->{prereqs}->{$phase}->{$hardness}->{$pkg};
+				my $existing = $np->{prereqs}->{$phase}->{$hardness}->{$pkg};
+				my $md = Module::Data->new( $pkg );
+				pp({
+					have => $existing,
+					want => $md->version,
+				});
+				
+			}
 		}
 	}
-	use Data::Dump qw( pp );
+
 	pp( $np );
 	1;
 }

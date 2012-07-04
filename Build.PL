@@ -28,6 +28,7 @@ my %module_build_args = (
   "requires" => {
     "Data::Dump" => 0,
     "Dist::Zilla::Util::EmulatePhase" => 0,
+    "Module::Data" => 0,
     "Moose" => 0,
     "perl" => "v5.10.0",
     "strict" => 0,
