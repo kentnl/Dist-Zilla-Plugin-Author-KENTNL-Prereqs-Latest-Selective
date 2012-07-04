@@ -57,10 +57,12 @@ sub for_each_dependency {
 }
 
 sub register_prereqs {
-	if ( defined $in_recursion and $in_recursion > 2 ) {
-		warn "Avoiding recursion";
+	if ( defined $in_recursion and $in_recursion > 0 ) {
+		#	warn "Avoiding recursion";
 		return;
 	}
+	my $c = caller();
+	warn "$c";
 	local $in_recursion = ( $in_recursion + 1 );
 	my $self = shift;
 	my $prereqs = get_prereqs({
