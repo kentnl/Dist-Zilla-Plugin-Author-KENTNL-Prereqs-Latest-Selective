@@ -58,21 +58,18 @@ sub for_each_dependency {
 
 sub register_prereqs {
 	if ( defined $in_recursion and $in_recursion > 0 ) {
-		#	warn "Avoiding recursion";
 		return;
 	}
-	my $c = caller();
-	warn "$c";
 	local $in_recursion = ( $in_recursion + 1 );
+
 	my $self = shift;
 	my $prereqs = get_prereqs({
 		zilla => $self->zilla,
 		with  => [qw( -PrereqSource )],
 		skip_isa => [ __PACKAGE__  , qw( - MetaData::BuiltWith )],
 	});
-	my $np = $prereqs->cpan_meta_prereqs->clone();
 
-	$self->for_each_dependency($np, sub{
+	$self->for_each_dependency( $prereqs->cpan_meta_prereqs , sub{
 		my ( $_self, $args ) = @_;
 		my $package = $args->{package};
 		if ( exists $self->wanted_latest->{$package} ) {
