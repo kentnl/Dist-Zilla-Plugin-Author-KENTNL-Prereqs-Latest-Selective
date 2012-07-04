@@ -57,11 +57,11 @@ sub for_each_dependency {
 }
 
 sub register_prereqs {
-	if ( defined $in_recursion ) {
+	if ( defined $in_recursion and $in_recursion > 2 ) {
 		warn "Avoiding recursion";
 		return;
 	}
-	local $in_recursion = 1;
+	local $in_recursion = ( $in_recursion + 1 );
 	my $self = shift;
 	my $prereqs = get_prereqs({
 		zilla => $self->zilla,
