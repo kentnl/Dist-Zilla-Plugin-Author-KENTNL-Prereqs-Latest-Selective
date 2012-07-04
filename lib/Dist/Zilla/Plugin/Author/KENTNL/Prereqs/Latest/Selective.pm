@@ -66,7 +66,7 @@ sub register_prereqs {
 	my $prereqs = get_prereqs({
 		zilla => $self->zilla,
 		with  => [qw( -PrereqSource )],
-		skip_isa => [ __PACKAGE__ ],
+		skip_isa => [ __PACKAGE__  , qw( - MetaData::BuiltWith )],
 	});
 	my $np = $prereqs->cpan_meta_prereqs->clone();
 
