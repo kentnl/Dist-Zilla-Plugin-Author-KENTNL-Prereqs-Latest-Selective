@@ -54,6 +54,7 @@ sub for_each_dependency {
       }
     }
   }
+  return $self;
 }
 
 # This needs to be 'our' to be localised.
