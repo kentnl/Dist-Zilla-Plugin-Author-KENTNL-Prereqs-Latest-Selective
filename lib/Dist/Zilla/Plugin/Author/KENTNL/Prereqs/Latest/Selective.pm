@@ -35,7 +35,6 @@ Currently, the list of packages that will be upgraded to the current version are
 
 =cut
 
-
 =method wanted_latest
 
 	my $hash = $plugin->wanted_latest();
@@ -67,6 +66,27 @@ sub current_version_of {
   return Module::Data->new($package)->version;
 }
 
+=method for_each_dependency
+
+	$plugin->for_each_dependency( $cpan_meta, sub {
+		my ( $self, $info ) = @_;
+
+		printf "%s => %s\n", $_ , $info->{$_} for qw( phase type package requirement )
+	});
+
+Utility for iterating all dependency specifications.
+
+Each dependency spec is passed as a hashref
+
+	{
+		phase => 'configure',
+		type  => 'requires',
+		package => 'Module::Metadata',
+		requirement => bless({}, 'CPAN::Meta::Requirements::_Range::_Range'); # or close.
+	}
+
+=cut
+
 sub for_each_dependency {
   my ( $self, $cpanmeta, $callback ) = @_;
 
@@ -91,8 +111,15 @@ sub for_each_dependency {
       }
     }
   }
+  return $self;
 }
 
+# This needs to be 'our' to be localised.
+# Otherwise, we can't shadow the value of $in_recursion
+# using localisation, so we'd have to decrement $in_recursion at the
+# end, manually.
+#
+## no critic (ProhibitPackageVars,ProhibitLocalVars)
 our $in_recursion = 0;
 
 sub register_prereqs {
@@ -123,8 +150,7 @@ sub register_prereqs {
       );
     }
   );
-
-  1;
+  return;
 }
 
 __PACKAGE__->meta->make_immutable;
