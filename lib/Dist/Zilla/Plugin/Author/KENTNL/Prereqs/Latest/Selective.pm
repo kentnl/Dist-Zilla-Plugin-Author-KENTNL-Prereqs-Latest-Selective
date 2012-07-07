@@ -159,7 +159,7 @@ Returns the currently installed version of a given thing.
 
 	$plugin->for_each_dependency( $cpan_meta, sub {
 		my ( $self, $info ) = @_;
-		
+
 		printf "%s => %s\n", $_ , $info->{$_} for qw( phase type package requirement )
 	});
 

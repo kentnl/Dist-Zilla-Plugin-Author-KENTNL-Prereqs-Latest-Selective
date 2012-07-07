@@ -60,6 +60,14 @@
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "homepage" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective.git",
+         "web" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective"
+      }
+   },
    "version" : "0.1.0",
    "x_BuiltWith" : {
       "modules" : {
