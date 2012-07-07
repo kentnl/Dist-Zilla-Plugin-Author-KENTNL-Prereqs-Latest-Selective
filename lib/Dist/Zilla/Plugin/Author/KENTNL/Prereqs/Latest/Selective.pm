@@ -17,18 +17,18 @@ use Dist::Zilla::Util::EmulatePhase qw( get_prereqs expand_modname );
 
 with expand_modname('-PrereqSource');
 
-our $in_recursion = 0;
+
+
 
 sub wanted_latest {
   return { map { $_ => 1 } qw(  Test::More Module::Build Dist::Zilla::PluginBundle::Author::KENTNL ) };
 }
 
+
 sub current_version_of {
   my ( $self, $package ) = @_;
   return Module::Data->new($package)->version;
 }
-
-use Data::Dump qw( pp );
 
 sub for_each_dependency {
   my ( $self, $cpanmeta, $callback ) = @_;
@@ -55,6 +55,8 @@ sub for_each_dependency {
     }
   }
 }
+
+our $in_recursion = 0;
 
 sub register_prereqs {
   if ( defined $in_recursion and $in_recursion > 0 ) {
@@ -105,6 +107,47 @@ Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective - Selectively up
 =head1 VERSION
 
 version 0.1.0
+
+=head1 SYNOPSIS
+
+	[Autoprereqs]
+
+	[Author::KENTNL::Prereqs::Latest::Selective]
+
+This will automatically upgrade the minimum required version to the currently running version, for a selective  list of packages,
+wherever they appear in dependencies.
+
+Currently, the list of packages that will be upgraded to the current version are as follows:
+
+=over 4
+
+=item * Test::More    - What I test all my packages with
+
+=item * Module::Build - The Installer I use for everything
+
+=item * Dist::Zilla::PluginBundle::Author::KENTNL - The config setup I use for everything.
+
+=back
+
+=head1 METHODS
+
+=head2 wanted_latest
+
+	my $hash = $plugin->wanted_latest();
+
+A Hashmap of Modules I want to be "Latest I've released with"
+
+	{
+		'Test::More' => 1,
+		'Module::Build' => 1,
+		'Dist::Zilla::PluginBundle::Author::KENTNL' => 1,
+	}
+
+=head2 current_version_of
+
+	my $v = $plugin->current_version_of('Foo');
+
+Returns the currently installed version of a given thing.
 
 =head1 AUTHOR
 

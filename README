@@ -5,6 +5,42 @@ NAME
 VERSION
     version 0.1.0
 
+SYNOPSIS
+            [Autoprereqs]
+
+            [Author::KENTNL::Prereqs::Latest::Selective]
+
+    This will automatically upgrade the minimum required version to the
+    currently running version, for a selective list of packages, wherever
+    they appear in dependencies.
+
+    Currently, the list of packages that will be upgraded to the current
+    version are as follows:
+
+    *   Test::More - What I test all my packages with
+
+    *   Module::Build - The Installer I use for everything
+
+    *   Dist::Zilla::PluginBundle::Author::KENTNL - The config setup I use
+        for everything.
+
+METHODS
+  wanted_latest
+            my $hash = $plugin->wanted_latest();
+
+    A Hashmap of Modules I want to be "Latest I've released with"
+
+            {
+                    'Test::More' => 1,
+                    'Module::Build' => 1,
+                    'Dist::Zilla::PluginBundle::Author::KENTNL' => 1,
+            }
+
+  current_version_of
+            my $v = $plugin->current_version_of('Foo');
+
+    Returns the currently installed version of a given thing.
+
 AUTHOR
     Kent Fredric <kentfredric@gmail.com>
 

@@ -37,7 +37,6 @@
       },
       "runtime" : {
          "requires" : {
-            "Data::Dump" : "0",
             "Dist::Zilla::Util::EmulatePhase" : "0",
             "Module::Data" : "0",
             "Moose" : "0",
@@ -64,7 +63,6 @@
    "version" : "0.1.0",
    "x_BuiltWith" : {
       "modules" : {
-         "Data::Dump" : "1.21",
          "Dist::Zilla::PluginBundle::Author::KENTNL" : "1.4.1",
          "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "NA(possibly not installed)",
          "Dist::Zilla::Util::EmulatePhase" : "0.01025801",
@@ -350,7 +348,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Twitter",
             "name" : "@Author::KENTNL/Twitter",
-            "version" : "0.016"
+            "version" : "0.017"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",

@@ -26,7 +26,6 @@ my %module_build_args = (
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
-    "Data::Dump" => 0,
     "Dist::Zilla::Util::EmulatePhase" => 0,
     "Module::Data" => 0,
     "Moose" => 0,
