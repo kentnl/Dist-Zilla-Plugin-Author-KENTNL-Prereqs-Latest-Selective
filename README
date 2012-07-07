@@ -41,6 +41,24 @@ METHODS
 
     Returns the currently installed version of a given thing.
 
+  for_each_dependency
+            $plugin->for_each_dependency( $cpan_meta, sub {
+                    my ( $self, $info ) = @_;
+                
+                    printf "%s => %s\n", $_ , $info->{$_} for qw( phase type package requirement )
+            });
+
+    Utility for iterating all dependency specifications.
+
+    Each dependency spec is passed as a hashref
+
+            {
+                    phase => 'configure',
+                    type  => 'requires',
+                    package => 'Module::Metadata',
+                    requirement => bless({}, 'CPAN::Meta::Requirements::_Range::_Range'); # or close.
+            }
+
 AUTHOR
     Kent Fredric <kentfredric@gmail.com>
 

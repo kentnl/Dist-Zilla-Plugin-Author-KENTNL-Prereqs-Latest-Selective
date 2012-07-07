@@ -19,7 +19,6 @@ with expand_modname('-PrereqSource');
 
 
 
-
 sub wanted_latest {
   return { map { $_ => 1 } qw(  Test::More Module::Build Dist::Zilla::PluginBundle::Author::KENTNL ) };
 }
@@ -29,6 +28,7 @@ sub current_version_of {
   my ( $self, $package ) = @_;
   return Module::Data->new($package)->version;
 }
+
 
 sub for_each_dependency {
   my ( $self, $cpanmeta, $callback ) = @_;
@@ -56,6 +56,12 @@ sub for_each_dependency {
   }
 }
 
+# This needs to be 'our' to be localised.
+# Otherwise, we can't shadow the value of $in_recursion
+# using localisation, so we'd have to decrement $in_recursion at the
+# end, manually.
+#
+## no critic (ProhibitPackageVars,ProhibitLocalVars)
 our $in_recursion = 0;
 
 sub register_prereqs {
@@ -86,8 +92,7 @@ sub register_prereqs {
       );
     }
   );
-
-  1;
+  return;
 }
 
 __PACKAGE__->meta->make_immutable;
@@ -148,6 +153,25 @@ A Hashmap of Modules I want to be "Latest I've released with"
 	my $v = $plugin->current_version_of('Foo');
 
 Returns the currently installed version of a given thing.
+
+=head2 for_each_dependency
+
+	$plugin->for_each_dependency( $cpan_meta, sub {
+		my ( $self, $info ) = @_;
+		
+		printf "%s => %s\n", $_ , $info->{$_} for qw( phase type package requirement )
+	});
+
+Utility for iterating all dependency specifications.
+
+Each dependency spec is passed as a hashref
+
+	{
+		phase => 'configure',
+		type  => 'requires',
+		package => 'Module::Metadata',
+		requirement => bless({}, 'CPAN::Meta::Requirements::_Range::_Range'); # or close.
+	}
 
 =head1 AUTHOR
 
