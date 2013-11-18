@@ -26,7 +26,7 @@ with expand_modname('-PrereqSource');
 
 This module is deprecated and no longer used by C<@Author::KENTNL>
 
-Instead, he recomends you use L<< C<[Prereqs::MatchInstalled]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled >>
+Instead, he recommends you use L<< C<[Prereqs::MatchInstalled]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled >>
 
 =head1 SYNOPSIS
 
@@ -46,7 +46,7 @@ Currently, the list of packages that will be upgraded to the current version are
 
 =item * Module::Build - The Installer I use for everything
 
-=item * Dist::Zilla::PluginBundle::Author::KENTNL - The config setup I use for everything.
+=item * Dist::Zilla::PluginBundle::Author::KENTNL - The configuration setup I use for everything.
 
 =back
 
@@ -56,7 +56,7 @@ Currently, the list of packages that will be upgraded to the current version are
 
 	my $hash = $plugin->wanted_latest();
 
-A Hashmap of Modules I want to be "Latest I've released with"
+A C<Hash> of Modules I want to be "Latest I've released with"
 
 	{
 		'Test::More' => 1,
@@ -93,7 +93,7 @@ sub current_version_of {
 
 Utility for iterating all dependency specifications.
 
-Each dependency spec is passed as a hashref
+Each dependency spec is passed as a C<HashRef>
 
 	{
 		phase => 'configure',
@@ -138,6 +138,16 @@ sub for_each_dependency {
 #
 ## no critic (ProhibitPackageVars,ProhibitLocalVars)
 our $in_recursion = 0;
+
+=method register_prereqs
+
+This module executes during C<prereqs> generation.
+
+As such, its advised to place it B<after> other things you want C<prereq>'s upgraded on.
+
+( Presently, it won't matter if you place it before, because it does some magic with phase emulation, but that might be removed one day )
+
+=cut
 
 sub register_prereqs {
   if ( defined $in_recursion and $in_recursion > 0 ) {
