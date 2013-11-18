@@ -11,6 +11,17 @@ use Dist::Zilla::Util::EmulatePhase qw( get_prereqs expand_modname );
 
 with expand_modname('-PrereqSource');
 
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective",
+    "interface":"class",
+    "inherits":["Moose::Object"],
+    "does":["Dist::Zilla::Role::PrereqSource"]
+}
+
+=end MetaPOD::JSON
+
 =head1 DESCRIPTION
 
 This module is deprecated and no longer used by C<@Author::KENTNL>
