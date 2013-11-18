@@ -133,7 +133,7 @@ Currently, the list of packages that will be upgraded to the current version are
 
 =item * Module::Build - The Installer I use for everything
 
-=item * Dist::Zilla::PluginBundle::Author::KENTNL - The config setup I use for everything.
+=item * Dist::Zilla::PluginBundle::Author::KENTNL - The configuration setup I use for everything.
 
 =back
 
@@ -141,7 +141,7 @@ Currently, the list of packages that will be upgraded to the current version are
 
 This module is deprecated and no longer used by C<@Author::KENTNL>
 
-Instead, he recomends you use L<< C<[Prereqs::MatchInstalled]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled >>
+Instead, he recommends you use L<< C<[Prereqs::MatchInstalled]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled >>
 
 =head1 METHODS
 
@@ -149,7 +149,7 @@ Instead, he recomends you use L<< C<[Prereqs::MatchInstalled]>|Dist::Zilla::Plug
 
 	my $hash = $plugin->wanted_latest();
 
-A Hashmap of Modules I want to be "Latest I've released with"
+A C<Hash> of Modules I want to be "Latest I've released with"
 
 	{
 		'Test::More' => 1,
@@ -173,7 +173,7 @@ Returns the currently installed version of a given thing.
 
 Utility for iterating all dependency specifications.
 
-Each dependency spec is passed as a hashref
+Each dependency spec is passed as a C<HashRef>
 
 	{
 		phase => 'configure',
