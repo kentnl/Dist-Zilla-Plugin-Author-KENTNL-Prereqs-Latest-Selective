@@ -26,7 +26,7 @@ my %module_build_args = (
     "Dist::Zilla::Util::EmulatePhase" => 0,
     "Module::Data" => 0,
     "Moose" => 0,
-    "perl" => "v5.10.0",
+    "perl" => "5.006",
     "strict" => 0,
     "warnings" => 0
   },
