@@ -3,13 +3,19 @@ use warnings;
 
 package Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective;
 
-# ABSTRACT: Selectively upgrade a few modules to depend on the version used.
+# ABSTRACT: [DEPRECATED] Selectively upgrade a few modules to depend on the version used.
 
 use Moose;
 use Module::Data;
 use Dist::Zilla::Util::EmulatePhase qw( get_prereqs expand_modname );
 
 with expand_modname('-PrereqSource');
+
+=head1 DESCRIPTION
+
+This module is deprecated and no longer used by C<@Author::KENTNL>
+
+Instead, he recomends you use L<< C<[Prereqs::MatchInstalled]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled >>
 
 =head1 SYNOPSIS
 
@@ -63,7 +69,7 @@ Returns the currently installed version of a given thing.
 
 sub current_version_of {
   my ( $self, $package ) = @_;
-  return Module::Data->new($package)->version;
+  return Module::Data->new($package)->_version_emulate;
 }
 
 =method for_each_dependency
