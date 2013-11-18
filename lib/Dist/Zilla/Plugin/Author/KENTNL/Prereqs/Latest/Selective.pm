@@ -6,10 +6,10 @@ BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective::VERSION = '0.1.0';
+  $Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective::VERSION = '0.1.1';
 }
 
-# ABSTRACT: Selectively upgrade a few modules to depend on the version used.
+# ABSTRACT: [DEPRECATED] Selectively upgrade a few modules to depend on the version used.
 
 use Moose;
 use Module::Data;
@@ -26,7 +26,7 @@ sub wanted_latest {
 
 sub current_version_of {
   my ( $self, $package ) = @_;
-  return Module::Data->new($package)->version;
+  return Module::Data->new($package)->_version_emulate;
 }
 
 
@@ -65,6 +65,7 @@ sub for_each_dependency {
 ## no critic (ProhibitPackageVars,ProhibitLocalVars)
 our $in_recursion = 0;
 
+
 sub register_prereqs {
   if ( defined $in_recursion and $in_recursion > 0 ) {
     return;
@@ -102,17 +103,18 @@ no Moose;
 1;
 
 __END__
+
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective - Selectively upgrade a few modules to depend on the version used.
+Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective - [DEPRECATED] Selectively upgrade a few modules to depend on the version used.
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 SYNOPSIS
 
@@ -131,9 +133,15 @@ Currently, the list of packages that will be upgraded to the current version are
 
 =item * Module::Build - The Installer I use for everything
 
-=item * Dist::Zilla::PluginBundle::Author::KENTNL - The config setup I use for everything.
+=item * Dist::Zilla::PluginBundle::Author::KENTNL - The configuration setup I use for everything.
 
 =back
+
+=head1 DESCRIPTION
+
+This module is deprecated and no longer used by C<@Author::KENTNL>
+
+Instead, he recommends you use L<< C<[Prereqs::MatchInstalled]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled >>
 
 =head1 METHODS
 
@@ -141,7 +149,7 @@ Currently, the list of packages that will be upgraded to the current version are
 
 	my $hash = $plugin->wanted_latest();
 
-A Hashmap of Modules I want to be "Latest I've released with"
+A C<Hash> of Modules I want to be "Latest I've released with"
 
 	{
 		'Test::More' => 1,
@@ -165,7 +173,7 @@ Returns the currently installed version of a given thing.
 
 Utility for iterating all dependency specifications.
 
-Each dependency spec is passed as a hashref
+Each dependency spec is passed as a C<HashRef>
 
 	{
 		phase => 'configure',
@@ -174,16 +182,35 @@ Each dependency spec is passed as a hashref
 		requirement => bless({}, 'CPAN::Meta::Requirements::_Range::_Range'); # or close.
 	}
 
+=head2 register_prereqs
+
+This module executes during C<prereqs> generation.
+
+As such, its advised to place it B<after> other things you want C<prereq>'s upgraded on.
+
+( Presently, it won't matter if you place it before, because it does some magic with phase emulation, but that might be removed one day )
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective",
+    "interface":"class",
+    "inherits":["Moose::Object"],
+    "does":["Dist::Zilla::Role::PrereqSource"]
+}
+
+
+=end MetaPOD::JSON
+
 =head1 AUTHOR
 
 Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
