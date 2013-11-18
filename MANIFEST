@@ -7,6 +7,8 @@ META.json
 META.yml
 README
 dist.ini
+layout/self_structure.dot
+layout/self_structure.png
 lib/Dist/Zilla/Plugin/Author/KENTNL/Prereqs/Latest/Selective.pm
 perlcritic.rc
 t/00-compile/lib_Dist_Zilla_Plugin_Author_KENTNL_Prereqs_Latest_Selective_pm.t

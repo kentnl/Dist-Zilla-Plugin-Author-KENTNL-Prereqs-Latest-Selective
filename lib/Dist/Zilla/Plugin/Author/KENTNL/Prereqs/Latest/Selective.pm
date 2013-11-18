@@ -181,6 +181,18 @@ Each dependency spec is passed as a hashref
 		requirement => bless({}, 'CPAN::Meta::Requirements::_Range::_Range'); # or close.
 	}
 
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective",
+    "interface":"class",
+    "inherits":["Moose::Object"],
+    "does":["Dist::Zilla::Role::PrereqSource"]
+}
+
+
+=end MetaPOD::JSON
+
 =head1 AUTHOR
 
 Kent Fredric <kentfredric@gmail.com>
