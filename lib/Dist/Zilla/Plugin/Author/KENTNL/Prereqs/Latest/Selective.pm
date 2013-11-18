@@ -6,10 +6,10 @@ BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective::VERSION = '0.1.0';
+  $Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective::VERSION = '0.1.1';
 }
 
-# ABSTRACT: Selectively upgrade a few modules to depend on the version used.
+# ABSTRACT: [DEPRECATED] Selectively upgrade a few modules to depend on the version used.
 
 use Moose;
 use Module::Data;
@@ -26,7 +26,7 @@ sub wanted_latest {
 
 sub current_version_of {
   my ( $self, $package ) = @_;
-  return Module::Data->new($package)->version;
+  return Module::Data->new($package)->_version_emulate;
 }
 
 
@@ -102,17 +102,18 @@ no Moose;
 1;
 
 __END__
+
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective - Selectively upgrade a few modules to depend on the version used.
+Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective - [DEPRECATED] Selectively upgrade a few modules to depend on the version used.
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 SYNOPSIS
 
@@ -134,6 +135,12 @@ Currently, the list of packages that will be upgraded to the current version are
 =item * Dist::Zilla::PluginBundle::Author::KENTNL - The config setup I use for everything.
 
 =back
+
+=head1 DESCRIPTION
+
+This module is deprecated and no longer used by C<@Author::KENTNL>
+
+Instead, he recomends you use L<< C<[Prereqs::MatchInstalled]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled >>
 
 =head1 METHODS
 
@@ -180,10 +187,9 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

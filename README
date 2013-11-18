@@ -1,9 +1,10 @@
 NAME
     Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective -
-    Selectively upgrade a few modules to depend on the version used.
+    [DEPRECATED] Selectively upgrade a few modules to depend on the version
+    used.
 
 VERSION
-    version 0.1.0
+    version 0.1.1
 
 SYNOPSIS
             [Autoprereqs]
@@ -23,6 +24,11 @@ SYNOPSIS
 
     *   Dist::Zilla::PluginBundle::Author::KENTNL - The config setup I use
         for everything.
+
+DESCRIPTION
+    This module is deprecated and no longer used by @Author::KENTNL
+
+    Instead, he recomends you use "[Prereqs::MatchInstalled]"
 
 METHODS
   wanted_latest
@@ -63,7 +69,7 @@ AUTHOR
     Kent Fredric <kentfredric@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2012 by Kent Fredric
+    This software is copyright (c) 2013 by Kent Fredric
     <kentfredric@gmail.com>.
 
     This is free software; you can redistribute it and/or modify it under
