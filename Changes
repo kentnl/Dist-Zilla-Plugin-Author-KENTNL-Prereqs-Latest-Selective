@@ -88,12 +88,13 @@ Release history for Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective
  [Documentation]
  - Add README.mkdn
  - Copyright 2013
-
- [Packaging]
- - Use new Module::Build features
+ - Add MetaPOD
 
  [Meta]
  - Bugs to github issues
+
+ [Packaging]
+ - Use new Module::Build features
 
  [Tests]
  - Compile tests now ::PerFile
