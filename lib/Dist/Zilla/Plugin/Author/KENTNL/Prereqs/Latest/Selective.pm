@@ -65,6 +65,7 @@ sub for_each_dependency {
 ## no critic (ProhibitPackageVars,ProhibitLocalVars)
 our $in_recursion = 0;
 
+
 sub register_prereqs {
   if ( defined $in_recursion and $in_recursion > 0 ) {
     return;
@@ -180,6 +181,14 @@ Each dependency spec is passed as a hashref
 		package => 'Module::Metadata',
 		requirement => bless({}, 'CPAN::Meta::Requirements::_Range::_Range'); # or close.
 	}
+
+=head2 register_prereqs
+
+This module executes during C<prereqs> generation.
+
+As such, its advised to place it B<after> other things you want C<prereq>'s upgraded on.
+
+( Presently, it won't matter if you place it before, because it does some magic with phase emulation, but that might be removed one day )
 
 =begin MetaPOD::JSON v1.1.0
 

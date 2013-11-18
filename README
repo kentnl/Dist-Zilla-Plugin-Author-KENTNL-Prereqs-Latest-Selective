@@ -65,6 +65,15 @@ METHODS
                     requirement => bless({}, 'CPAN::Meta::Requirements::_Range::_Range'); # or close.
             }
 
+  register_prereqs
+    This module executes during "prereqs" generation.
+
+    As such, its advised to place it after other things you want "prereq"'s
+    upgraded on.
+
+    ( Presently, it won't matter if you place it before, because it does
+    some magic with phase emulation, but that might be removed one day )
+
 AUTHOR
     Kent Fredric <kentfredric@gmail.com>
 
