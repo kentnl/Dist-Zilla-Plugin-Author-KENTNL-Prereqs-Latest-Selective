@@ -7,10 +7,10 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Module::Build" => "0.4201"
+    "Module::Build" => "0.4202"
   },
   "configure_requires" => {
-    "Module::Build" => "0.4201"
+    "Module::Build" => "0.4202"
   },
   "dist_abstract" => "[DEPRECATED] Selectively upgrade a few modules to depend on the version used.",
   "dist_author" => [
@@ -39,7 +39,7 @@ my %module_build_args = (
 
 
 my %fallback_build_requires = (
-  "Module::Build" => "0.4201",
+  "Module::Build" => "0.4202",
   "Test::More" => "1.001002"
 );
 
