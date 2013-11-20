@@ -48,8 +48,9 @@ sub pmver {
     return sprintf('%-45s => %-10s%-15s%s', $module, $pmver, $wanted, "\n");
 }
 
+eval { $v .= pmver('Dist::Zilla::Role::PrereqSource','any version') };
 eval { $v .= pmver('Dist::Zilla::Util::EmulatePhase','any version') };
-eval { $v .= pmver('Module::Build','0.4200') };
+eval { $v .= pmver('Module::Build','0.4201') };
 eval { $v .= pmver('Module::Data','any version') };
 eval { $v .= pmver('Moose','any version') };
 eval { $v .= pmver('Test::More','1.001002') };

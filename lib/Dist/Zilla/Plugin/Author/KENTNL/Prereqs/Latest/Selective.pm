@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective::VERSION = '0.1.1';
+  $Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective::VERSION = '0.1.2';
 }
 
 # ABSTRACT: [DEPRECATED] Selectively upgrade a few modules to depend on the version used.
@@ -15,7 +15,7 @@ use Moose;
 use Module::Data;
 use Dist::Zilla::Util::EmulatePhase qw( get_prereqs expand_modname );
 
-with expand_modname('-PrereqSource');
+with 'Dist::Zilla::Role::PrereqSource';
 
 
 
@@ -114,7 +114,7 @@ Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective - [DEPRECATED] S
 
 =head1 VERSION
 
-version 0.1.1
+version 0.1.2
 
 =head1 SYNOPSIS
 

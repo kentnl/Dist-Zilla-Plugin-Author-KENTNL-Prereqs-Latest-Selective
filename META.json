@@ -16,12 +16,12 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Module::Build" : "0.4200"
+            "Module::Build" : "0.4201"
          }
       },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.4200"
+            "Module::Build" : "0.4201"
          }
       },
       "develop" : {
@@ -83,6 +83,7 @@
       },
       "runtime" : {
          "requires" : {
+            "Dist::Zilla::Role::PrereqSource" : "0",
             "Dist::Zilla::Util::EmulatePhase" : "0",
             "Module::Data" : "0",
             "Moose" : "0",
@@ -100,7 +101,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/Prereqs/Latest/Selective.pm",
-         "version" : "v0.1.1"
+         "version" : "v0.1.2"
       }
    },
    "release_status" : "stable",
@@ -115,7 +116,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective"
       }
    },
-   "version" : "0.1.1",
+   "version" : "0.1.2",
    "x_BuiltWith" : {
       "modules" : {
          "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : "2.002001",
@@ -149,7 +150,7 @@
          "Dist::Zilla::Plugin::Prereqs" : "5.006",
          "Dist::Zilla::Plugin::Prereqs::MatchInstalled" : "0.1.4",
          "Dist::Zilla::Plugin::PruneCruft" : "5.006",
-         "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.131500",
+         "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.133060",
          "Dist::Zilla::Plugin::ReadmeFromPod" : "0.21",
          "Dist::Zilla::Plugin::ReportVersions::Tiny" : "1.10",
          "Dist::Zilla::Plugin::Test::CPAN::Changes" : "0.008",
@@ -162,8 +163,9 @@
          "Dist::Zilla::Plugin::UploadToCPAN" : "5.006",
          "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.002001",
          "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "1.7.2",
+         "Dist::Zilla::Role::PrereqSource" : "5.006",
          "Dist::Zilla::Util::EmulatePhase" : "0.01025803",
-         "Module::Build" : "0.4200",
+         "Module::Build" : "0.4201",
          "Module::Data" : "0.006",
          "Moose" : "2.1106",
          "Pod::Coverage::TrustPod" : "0.100003",
@@ -511,7 +513,7 @@
          {
             "class" : "Dist::Zilla::Plugin::ReadmeAnyFromPod",
             "name" : "@Author::KENTNL/ReadmeAnyFromPod",
-            "version" : "0.131500"
+            "version" : "0.133060"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::CPAN::Changes",
