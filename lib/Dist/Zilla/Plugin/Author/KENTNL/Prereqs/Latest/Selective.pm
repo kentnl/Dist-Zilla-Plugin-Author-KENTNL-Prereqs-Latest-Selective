@@ -9,7 +9,7 @@ use Moose;
 use Module::Data;
 use Dist::Zilla::Util::EmulatePhase qw( get_prereqs expand_modname );
 
-with expand_modname('-PrereqSource');
+with 'Dist::Zilla::Role::PrereqSource';
 
 =begin MetaPOD::JSON v1.1.0
 
