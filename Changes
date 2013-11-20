@@ -1,6 +1,17 @@
 Release history for Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective
 
-0.1.2 2013-11-20T03:02:06Z
+0.1.2 2013-11-20T03:06:09Z
+ [00 Bugfix]
+ - Make sure PrereqSource role is a dep
+
+ [Dependencies::Added / runtime requires]
+ - Dist::Zilla::Role::PrereqSource
+
+ [Dependencies::Changed / build requires]
+ - Module::Build 0.4200 → 0.4202
+
+ [Dependencies::Changed / configure requires]
+ - Module::Build 0.4200 → 0.4202
 
 0.1.1 2013-11-18T12:20:20Z
  [00 Minor]
