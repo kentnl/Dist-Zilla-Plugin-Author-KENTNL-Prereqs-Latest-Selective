@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use 5.006;
+use 5.008;
 
 use ExtUtils::MakeMaker ;
 
@@ -25,6 +25,7 @@ my %WriteMakefileArgs = (
     "Module::Data" => 0,
     "Moose" => 0,
     "strict" => 0,
+    "utf8" => 0,
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
@@ -48,6 +49,7 @@ my %FallbackPrereqs = (
   "Moose" => 0,
   "Test::More" => "0.89",
   "strict" => 0,
+  "utf8" => 0,
   "warnings" => 0
 );
 
