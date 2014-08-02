@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective - \[DEPRECATED\]
 
 # VERSION
 
-version 1.000000
+version 1.000001
 
 # SYNOPSIS
 
