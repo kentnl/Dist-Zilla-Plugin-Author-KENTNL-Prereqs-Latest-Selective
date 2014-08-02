@@ -12,6 +12,7 @@ copyright_holder = Kent Fredric <kentfredric@gmail.com>
 git_versions      = 1
 twitter_hash_tags = #perl #cpan
 normal_form       = normal_3
+bumpversions      = 1
 
 ; version_major     = 0
 ; version_minor     = 1

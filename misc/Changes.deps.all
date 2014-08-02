@@ -2,10 +2,11 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
 
 0.1.3
  [Added / develop requires]
+ - Dist::Zilla::Plugin::BumpVersionAfterRelease
  - Dist::Zilla::Plugin::Git::NextRelease
- - Dist::Zilla::Plugin::Git::NextVersion::Sanitized
  - Dist::Zilla::Plugin::MinimumPerl
  - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled
+ - Dist::Zilla::Plugin::RewriteVersion::Sanitized
  - Dist::Zilla::Plugin::RunExtraTests
  - Dist::Zilla::Plugin::Test::ReportPrereqs
 
@@ -34,6 +35,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::Plugin::CheckExtraTests
  - Dist::Zilla::Plugin::Git::NextVersion
  - Dist::Zilla::Plugin::NextRelease
+ - Dist::Zilla::Plugin::PkgVersion
  - Dist::Zilla::Plugin::PruneCruft
  - Dist::Zilla::Plugin::ReportVersions::Tiny
  - Dist::Zilla::PluginBundle::Author::KENTNL 2.002001
