@@ -85,7 +85,7 @@ sub wanted_latest {
 
 
 sub current_version_of {
-  my ( $self, $package ) = @_;
+  my ( undef, $package ) = @_;
   return Module::Data->new($package)->_version_emulate;
 }
 
@@ -172,7 +172,7 @@ sub register_prereqs {
 
   $self->for_each_dependency(
     $prereqs->cpan_meta_prereqs => sub {
-      my ( $_self, $args ) = @_;
+      my ( undef, $args ) = @_;
       my $package = $args->{package};
 
       return unless exists $self->wanted_latest->{$package};
