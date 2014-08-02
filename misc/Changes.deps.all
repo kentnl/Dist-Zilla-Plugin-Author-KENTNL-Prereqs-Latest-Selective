@@ -22,6 +22,9 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::App::Command::bakeini 0.001001
  - Dist::Zilla::PluginBundle::Author::KENTNL 2.016007
 
+ [Added / runtime requires]
+ - utf8
+
  [Added / test recommends]
  - CPAN::Meta 2.120900
  - ExtUtils::MakeMaker 6.98
@@ -30,6 +33,9 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Added / test requires]
  - ExtUtils::MakeMaker
  - File::Spec
+
+ [Changed / runtime requires]
+ - perl 5.006 → 5.008
 
  [Changed / test requires]
  - Test::More 1.001002 → 0.89
