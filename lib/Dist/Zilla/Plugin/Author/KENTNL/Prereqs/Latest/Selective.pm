@@ -1,21 +1,74 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective;
-BEGIN {
-  $Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective::VERSION = '0.1.2';
-}
+
+our $VERSION = '1.000000';
 
 # ABSTRACT: [DEPRECATED] Selectively upgrade a few modules to depend on the version used.
 
-use Moose;
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
+use Moose qw( with );
 use Module::Data;
 use Dist::Zilla::Util::EmulatePhase qw( get_prereqs expand_modname );
 
 with 'Dist::Zilla::Role::PrereqSource';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -24,10 +77,37 @@ sub wanted_latest {
 }
 
 
+
+
+
+
+
+
+
 sub current_version_of {
-  my ( $self, $package ) = @_;
+  my ( undef, $package ) = @_;
   return Module::Data->new($package)->_version_emulate;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 sub for_each_dependency {
@@ -49,7 +129,7 @@ sub for_each_dependency {
             type        => $type,
             package     => $package,
             requirement => $requirements->{$package},
-          }
+          },
         );
       }
     }
@@ -66,6 +146,15 @@ sub for_each_dependency {
 our $in_recursion = 0;
 
 
+
+
+
+
+
+
+
+
+
 sub register_prereqs {
   if ( defined $in_recursion and $in_recursion > 0 ) {
     return;
@@ -78,12 +167,12 @@ sub register_prereqs {
       zilla    => $self->zilla,
       with     => [qw( -PrereqSource )],
       skip_isa => [ __PACKAGE__, qw( -MetaData::BuiltWith ) ],
-    }
+    },
   );
 
   $self->for_each_dependency(
     $prereqs->cpan_meta_prereqs => sub {
-      my ( $_self, $args ) = @_;
+      my ( undef, $args ) = @_;
       my $package = $args->{package};
 
       return unless exists $self->wanted_latest->{$package};
@@ -92,7 +181,7 @@ sub register_prereqs {
         { phase => $args->{phase}, type => $args->{type} },
         $package, $self->current_version_of($package),
       );
-    }
+    },
   );
   return;
 }
@@ -114,7 +203,7 @@ Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective - [DEPRECATED] S
 
 =head1 VERSION
 
-version 0.1.2
+version 1.000000
 
 =head1 SYNOPSIS
 
@@ -208,7 +297,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
