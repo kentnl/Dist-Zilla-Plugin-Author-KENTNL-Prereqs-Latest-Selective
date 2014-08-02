@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective;
 
-our $VERSION = '0.1.3';
+our $VERSION = '1.000000';
 
 # ABSTRACT: [DEPRECATED] Selectively upgrade a few modules to depend on the version used.
 
