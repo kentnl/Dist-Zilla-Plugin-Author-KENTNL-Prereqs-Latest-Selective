@@ -11,7 +11,7 @@ our $VERSION = '1.000000';
 
 # AUTHORITY
 
-use Moose;
+use Moose qw( with );
 use Module::Data;
 use Dist::Zilla::Util::EmulatePhase qw( get_prereqs expand_modname );
 
