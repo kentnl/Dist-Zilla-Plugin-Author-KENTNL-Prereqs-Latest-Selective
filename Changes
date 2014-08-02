@@ -5,7 +5,7 @@ Release history for Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective
  - Dependencies changed since 0.1.2, see misc/*.deps* for details
  - build: ↑1
  - configure: ↑1
- - develop: +6 ↑1 -7
+ - develop: +6 -8 (suggests: +2 -1)
  - test: +2 ↑1 (recommends: +1)
 
 0.1.2 2013-11-20T03:06:09Z
