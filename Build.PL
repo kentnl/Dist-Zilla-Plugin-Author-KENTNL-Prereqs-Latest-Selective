@@ -18,7 +18,7 @@ my %module_build_args = (
     "Kent Fredric <kentfredric\@gmail.com>"
   ],
   "dist_name" => "Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective",
-  "dist_version" => "0.1.3",
+  "dist_version" => "0.001003",
   "license" => "perl",
   "module_name" => "Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective",
   "recommends" => {},
