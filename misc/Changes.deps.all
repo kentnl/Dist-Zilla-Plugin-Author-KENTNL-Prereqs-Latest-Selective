@@ -9,6 +9,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
 
  [Added / develop requires]
  - Dist::Zilla::Plugin::BumpVersionAfterRelease
+ - Dist::Zilla::Plugin::CopyFilesFromBuild
  - Dist::Zilla::Plugin::Git::NextRelease
  - Dist::Zilla::Plugin::MakeMaker
  - Dist::Zilla::Plugin::MinimumPerl
