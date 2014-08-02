@@ -129,7 +129,7 @@ sub for_each_dependency {
             type        => $type,
             package     => $package,
             requirement => $requirements->{$package},
-          }
+          },
         );
       }
     }
@@ -167,7 +167,7 @@ sub register_prereqs {
       zilla    => $self->zilla,
       with     => [qw( -PrereqSource )],
       skip_isa => [ __PACKAGE__, qw( -MetaData::BuiltWith ) ],
-    }
+    },
   );
 
   $self->for_each_dependency(
@@ -181,7 +181,7 @@ sub register_prereqs {
         { phase => $args->{phase}, type => $args->{type} },
         $package, $self->current_version_of($package),
       );
-    }
+    },
   );
   return;
 }
