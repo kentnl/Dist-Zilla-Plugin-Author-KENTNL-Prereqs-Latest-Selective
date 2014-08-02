@@ -112,13 +112,13 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/kentinl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective/issues"
+         "web" : "https://github.com/kentnl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective/issues"
       },
-      "homepage" : "https://github.com/kentinl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective",
+      "homepage" : "https://github.com/kentnl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective",
       "repository" : {
          "type" : "git",
-         "url" : "https://github.com/kentinl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective.git",
-         "web" : "https://github.com/kentinl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective"
+         "url" : "https://github.com/kentnl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective.git",
+         "web" : "https://github.com/kentnl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective"
       }
    },
    "version" : "1.000000",

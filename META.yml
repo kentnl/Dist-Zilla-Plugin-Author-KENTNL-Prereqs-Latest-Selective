@@ -29,9 +29,9 @@ requires:
   utf8: '0'
   warnings: '0'
 resources:
-  bugtracker: https://github.com/kentinl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective/issues
-  homepage: https://github.com/kentinl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective
-  repository: https://github.com/kentinl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective.git
+  bugtracker: https://github.com/kentnl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective/issues
+  homepage: https://github.com/kentnl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective
+  repository: https://github.com/kentnl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective.git
 version: '1.000000'
 x_BuiltWith:
   modules:
