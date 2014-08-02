@@ -4,13 +4,13 @@ Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective - \[DEPRECATED\]
 
 # VERSION
 
-version 0.1.2
+version 0.1.3
 
 # SYNOPSIS
 
-	[Autoprereqs]
+        [Autoprereqs]
 
-	[Author::KENTNL::Prereqs::Latest::Selective]
+        [Author::KENTNL::Prereqs::Latest::Selective]
 
 This will automatically upgrade the minimum required version to the currently running version, for a selective  list of packages,
 wherever they appear in dependencies.
@@ -31,57 +31,48 @@ Instead, he recommends you use [`[Prereqs::MatchInstalled]`](https://metacpan.or
 
 ## wanted\_latest
 
-	my $hash = $plugin->wanted_latest();
+        my $hash = $plugin->wanted_latest();
 
 A `Hash` of Modules I want to be "Latest I've released with"
 
-	{
-		'Test::More' => 1,
-		'Module::Build' => 1,
-		'Dist::Zilla::PluginBundle::Author::KENTNL' => 1,
-	}
+        {
+                'Test::More' => 1,
+                'Module::Build' => 1,
+                'Dist::Zilla::PluginBundle::Author::KENTNL' => 1,
+        }
 
 ## current\_version\_of
 
-	my $v = $plugin->current_version_of('Foo');
+        my $v = $plugin->current_version_of('Foo');
 
 Returns the currently installed version of a given thing.
 
 ## for\_each\_dependency
 
-	$plugin->for_each_dependency( $cpan_meta, sub {
-		my ( $self, $info ) = @_;
+        $plugin->for_each_dependency( $cpan_meta, sub {
+                my ( $self, $info ) = @_;
 
-		printf "%s => %s\n", $_ , $info->{$_} for qw( phase type package requirement )
-	});
+                printf "%s => %s\n", $_ , $info->{$_} for qw( phase type package requirement )
+        });
 
 Utility for iterating all dependency specifications.
 
 Each dependency spec is passed as a `HashRef`
 
-	{
-		phase => 'configure',
-		type  => 'requires',
-		package => 'Module::Metadata',
-		requirement => bless({}, 'CPAN::Meta::Requirements::_Range::_Range'); # or close.
-	}
+        {
+                phase => 'configure',
+                type  => 'requires',
+                package => 'Module::Metadata',
+                requirement => bless({}, 'CPAN::Meta::Requirements::_Range::_Range'); # or close.
+        }
 
 ## register\_prereqs
 
 This module executes during `prereqs` generation.
 
-As such, its advised to place it __after__ other things you want `prereq`'s upgraded on.
+As such, its advised to place it **after** other things you want `prereq`'s upgraded on.
 
 ( Presently, it won't matter if you place it before, because it does some magic with phase emulation, but that might be removed one day )
-
-{
-    "namespace":"Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective",
-    "interface":"class",
-    "inherits":\["Moose::Object"\],
-    "does":\["Dist::Zilla::Role::PrereqSource"\]
-}
-
-
 
 # AUTHOR
 
@@ -89,7 +80,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
