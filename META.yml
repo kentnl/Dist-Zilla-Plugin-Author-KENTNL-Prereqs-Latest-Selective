@@ -36,6 +36,7 @@ version: 0.1.3
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.142060'
+    Dist::Zilla::App::Command::bakeini: '0.001001'
     Dist::Zilla::Plugin::Authority: '1.006'
     Dist::Zilla::Plugin::AutoPrereqs: '5.020'
     Dist::Zilla::Plugin::ConfirmRelease: '5.020'
@@ -79,7 +80,6 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Twitter: '0.025'
     Dist::Zilla::Plugin::UploadToCPAN: '5.020'
     Dist::Zilla::PluginBundle::Author::KENTNL: '2.016007'
-    Dist::Zilla::PluginBundle::Author::KENTNL::Lite: '2.000000'
     Dist::Zilla::Role::PrereqSource: '5.020'
     Dist::Zilla::Util::EmulatePhase: '1.000001'
     ExtUtils::MakeMaker: '6.98'
@@ -119,7 +119,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::NextVersion:
           first_version: '0.001000'
           version_by_branch: '0'
-          version_regexp: (?^:^(.*)-source$)
+          version_regexp: (?^u:^(.*)-source$)
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
         Dist::Zilla::Role::Version::Sanitize:
@@ -340,14 +340,6 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/BundleDevelSuggests'
       version: '5.020'
     -
-      class: Dist::Zilla::Plugin::Prereqs
-      config:
-        Dist::Zilla::Plugin::Prereqs:
-          phase: develop
-          type: requires
-      name: '@Author::KENTNL/BundleDevelRequires'
-      version: '5.020'
-    -
       class: Dist::Zilla::Plugin::MinimumPerl
       name: '@Author::KENTNL/MinimumPerl'
       version: '1.003'
@@ -451,7 +443,7 @@ x_Dist_Zilla:
             - dist.ini
             - Changes
           allow_dirty_match:
-            - (?^:^lib/)
+            - (?^u:^lib/)
           changelog: Changes
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
@@ -533,11 +525,12 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled:
           applyto_map:
-            - 'develop.requires = develop.requires'
+            - 'develop.suggests = develop.suggests'
           applyto_phase:
             - develop
           modules:
             - Dist::Zilla::PluginBundle::Author::KENTNL
+            - Dist::Zilla::App::Command::bakeini
       name: '@Author::KENTNL/always_latest_develop_bundle'
       version: '0.002000'
     -
