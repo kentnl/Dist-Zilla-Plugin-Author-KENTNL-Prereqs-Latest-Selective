@@ -2,13 +2,7 @@ use strict;
 use warnings;
 
 package Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective;
-BEGIN {
-  $Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective::VERSION = '0.1.2';
-}
-
+$Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective::VERSION = '0.1.3';
 # ABSTRACT: [DEPRECATED] Selectively upgrade a few modules to depend on the version used.
 
 use Moose;
@@ -19,15 +13,95 @@ with 'Dist::Zilla::Role::PrereqSource';
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 sub wanted_latest {
   return { map { $_ => 1 } qw(  Test::More Module::Build Dist::Zilla::PluginBundle::Author::KENTNL ) };
 }
+
+
+
+
+
+
+
 
 
 sub current_version_of {
   my ( $self, $package ) = @_;
   return Module::Data->new($package)->_version_emulate;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 sub for_each_dependency {
@@ -64,6 +138,15 @@ sub for_each_dependency {
 #
 ## no critic (ProhibitPackageVars,ProhibitLocalVars)
 our $in_recursion = 0;
+
+
+
+
+
+
+
+
+
 
 
 sub register_prereqs {
@@ -114,7 +197,7 @@ Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective - [DEPRECATED] S
 
 =head1 VERSION
 
-version 0.1.2
+version 0.1.3
 
 =head1 SYNOPSIS
 
@@ -208,7 +291,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
