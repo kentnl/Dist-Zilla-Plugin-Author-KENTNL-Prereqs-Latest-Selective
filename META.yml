@@ -19,7 +19,7 @@ name: Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective
 provides:
   Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/Prereqs/Latest/Selective.pm
-    version: '0.001003'
+    version: '1.000000'
 requires:
   Dist::Zilla::Role::PrereqSource: '0'
   Dist::Zilla::Util::EmulatePhase: '0'
@@ -32,7 +32,7 @@ resources:
   bugtracker: https://github.com/kentinl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective/issues
   homepage: https://github.com/kentinl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective
   repository: https://github.com/kentinl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective.git
-version: '0.001003'
+version: '1.000000'
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.142060'
@@ -409,7 +409,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: '0'
-          tag: 0.001003-source
+          tag: 1.000000-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -463,7 +463,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: '0'
-          tag: '0.001003'
+          tag: '1.000000'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local
