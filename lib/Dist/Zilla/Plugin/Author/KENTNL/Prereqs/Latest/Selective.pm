@@ -28,36 +28,6 @@ with 'Dist::Zilla::Role::PrereqSource';
 
 =end MetaPOD::JSON
 
-=head1 DESCRIPTION
-
-This module is deprecated and no longer used by C<@Author::KENTNL>
-
-Instead, he recommends you use L<< C<[Prereqs::MatchInstalled]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled >>
-
-=head1 SYNOPSIS
-
-
-	[Autoprereqs]
-
-	[Author::KENTNL::Prereqs::Latest::Selective]
-
-This will automatically upgrade the minimum required version to the currently running version, for a selective  list of packages,
-wherever they appear in dependencies.
-
-Currently, the list of packages that will be upgraded to the current version are as follows:
-
-=over 4
-
-=item * Test::More    - What I test all my packages with
-
-=item * Module::Build - The Installer I use for everything
-
-=item * Dist::Zilla::PluginBundle::Author::KENTNL - The configuration setup I use for everything.
-
-=back
-
-=cut
-
 =method wanted_latest
 
 	my $hash = $plugin->wanted_latest();
@@ -190,3 +160,33 @@ __PACKAGE__->meta->make_immutable;
 no Moose;
 
 1;
+
+=head1 DESCRIPTION
+
+This module is deprecated and no longer used by C<@Author::KENTNL>
+
+Instead, he recommends you use L<< C<[Prereqs::MatchInstalled]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled >>
+
+=head1 SYNOPSIS
+
+
+	[Autoprereqs]
+
+	[Author::KENTNL::Prereqs::Latest::Selective]
+
+This will automatically upgrade the minimum required version to the currently running version, for a selective  list of packages,
+wherever they appear in dependencies.
+
+Currently, the list of packages that will be upgraded to the current version are as follows:
+
+=over 4
+
+=item * Test::More    - What I test all my packages with
+
+=item * Module::Build - The Installer I use for everything
+
+=item * Dist::Zilla::PluginBundle::Author::KENTNL - The configuration setup I use for everything.
+
+=back
+
+=cut
