@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective;
 
-our $VERSION = '1.000000';
+our $VERSION = '1.000001';
 
 # ABSTRACT: [DEPRECATED] Selectively upgrade a few modules to depend on the version used.
 
@@ -16,36 +16,6 @@ use Module::Data;
 use Dist::Zilla::Util::EmulatePhase qw( get_prereqs expand_modname );
 
 with 'Dist::Zilla::Role::PrereqSource';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -203,7 +173,7 @@ Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective - [DEPRECATED] S
 
 =head1 VERSION
 
-version 1.000000
+version 1.000001
 
 =head1 SYNOPSIS
 
