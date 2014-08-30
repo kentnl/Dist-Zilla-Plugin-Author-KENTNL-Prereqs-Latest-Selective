@@ -13,7 +13,6 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( with );
 use Module::Data;
-use Dist::Zilla::Util::EmulatePhase qw( get_prereqs expand_modname );
 
 with 'Dist::Zilla::Role::PrereqSource';
 
@@ -132,13 +131,7 @@ sub register_prereqs {
   local $in_recursion = ( $in_recursion + 1 );
 
   my $self    = shift;
-  my $prereqs = get_prereqs(
-    {
-      zilla    => $self->zilla,
-      with     => [qw( -PrereqSource )],
-      skip_isa => [ __PACKAGE__, qw( -MetaData::BuiltWith ) ],
-    },
-  );
+  my $prereqs = $self->zilla->prereqs;
 
   $self->for_each_dependency(
     $prereqs->cpan_meta_prereqs => sub {

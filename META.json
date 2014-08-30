@@ -83,7 +83,6 @@
       "runtime" : {
          "requires" : {
             "Dist::Zilla::Role::PrereqSource" : "0",
-            "Dist::Zilla::Util::EmulatePhase" : "0",
             "Module::Data" : "0",
             "Moose" : "0",
             "perl" : "5.008",
@@ -176,7 +175,6 @@
          "Dist::Zilla::Plugin::UploadToCPAN" : "5.020",
          "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.020000",
          "Dist::Zilla::Role::PrereqSource" : "5.020",
-         "Dist::Zilla::Util::EmulatePhase" : "1.001001",
          "Dist::Zilla::Util::Test::KENTNL" : "1.003001",
          "ExtUtils::MakeMaker" : "6.98",
          "File::Spec" : "3.49",

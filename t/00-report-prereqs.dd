@@ -68,7 +68,6 @@ do { my $x = {
        'runtime' => {
                       'requires' => {
                                       'Dist::Zilla::Role::PrereqSource' => '0',
-                                      'Dist::Zilla::Util::EmulatePhase' => '0',
                                       'Module::Data' => '0',
                                       'Moose' => '0',
                                       'perl' => '5.008',

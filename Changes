@@ -1,15 +1,20 @@
 Release history for Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective
 
-1.000002 2014-08-30T12:28:03Z
+1.000002 2014-08-30T12:47:07Z
  [00 Minor]
  - metadata
+ - tests
 
  [Dependencies::Stats]
  - Dependencies changed since 1.000001, see misc/*.deps* for details
  - develop: +1 ↑1 (suggests: ↑2)
+ - test: +2
 
  [Metadata]
  - fix author to kentnl
+
+ [Tests]
+ - Coverage testing
 
 1.000001 2014-08-15T21:15:05Z
  [00 Trivial]

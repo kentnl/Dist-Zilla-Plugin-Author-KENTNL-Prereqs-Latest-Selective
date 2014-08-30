@@ -21,7 +21,6 @@ my %WriteMakefileArgs = (
   "NAME" => "Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective",
   "PREREQ_PM" => {
     "Dist::Zilla::Role::PrereqSource" => 0,
-    "Dist::Zilla::Util::EmulatePhase" => 0,
     "Module::Data" => 0,
     "Moose" => 0,
     "strict" => 0,
@@ -44,7 +43,6 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "Dist::Zilla::Role::PrereqSource" => 0,
-  "Dist::Zilla::Util::EmulatePhase" => 0,
   "Dist::Zilla::Util::Test::KENTNL" => "1.003001",
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
