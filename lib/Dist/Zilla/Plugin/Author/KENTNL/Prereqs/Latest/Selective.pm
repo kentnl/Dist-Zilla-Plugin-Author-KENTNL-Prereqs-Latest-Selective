@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective;
 
-our $VERSION = '1.000002';
+our $VERSION = '1.001000';
 
 # ABSTRACT: [DEPRECATED] Selectively upgrade a few modules to depend on the version used.
 
@@ -13,7 +13,6 @@ our $VERSION = '1.000002';
 
 use Moose qw( with );
 use Module::Data;
-use Dist::Zilla::Util::EmulatePhase qw( get_prereqs expand_modname );
 
 with 'Dist::Zilla::Role::PrereqSource';
 
@@ -132,13 +131,7 @@ sub register_prereqs {
   local $in_recursion = ( $in_recursion + 1 );
 
   my $self    = shift;
-  my $prereqs = get_prereqs(
-    {
-      zilla    => $self->zilla,
-      with     => [qw( -PrereqSource )],
-      skip_isa => [ __PACKAGE__, qw( -MetaData::BuiltWith ) ],
-    },
-  );
+  my $prereqs = $self->zilla->prereqs;
 
   $self->for_each_dependency(
     $prereqs->cpan_meta_prereqs => sub {
