@@ -1,6 +1,11 @@
 Release history for Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective
 
 {{$NEXT}}
+ [00 Minor]
+ - metadata
+
+ [Metadata]
+ - fix author to kentnl
 
 1.000001 2014-08-15T21:15:05Z
  [00 Trivial]
