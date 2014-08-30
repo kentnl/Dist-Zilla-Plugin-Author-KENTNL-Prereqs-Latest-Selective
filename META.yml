@@ -1,7 +1,7 @@
 ---
 abstract: '[DEPRECATED] Selectively upgrade a few modules to depend on the version used.'
 author:
-  - 'Kent Fredric <kentfredric@gmail.com>'
+  - 'Kent Fredric <kentnl@cpan.org>'
 build_requires:
   ExtUtils::MakeMaker: '0'
   File::Spec: '0'

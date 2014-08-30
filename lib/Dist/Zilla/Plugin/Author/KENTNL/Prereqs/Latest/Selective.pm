@@ -263,7 +263,7 @@ As such, its advised to place it B<after> other things you want C<prereq>'s upgr
 
 =head1 AUTHOR
 
-Kent Fredric <kentfredric@gmail.com>
+Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
