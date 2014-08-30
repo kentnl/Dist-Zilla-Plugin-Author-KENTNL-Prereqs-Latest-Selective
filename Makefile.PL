@@ -29,8 +29,10 @@ my %WriteMakefileArgs = (
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
+    "Dist::Zilla::Util::Test::KENTNL" => "1.003001",
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
+    "Test::DZil" => 0,
     "Test::More" => "0.89"
   },
   "VERSION" => "1.000002",
@@ -43,10 +45,12 @@ my %WriteMakefileArgs = (
 my %FallbackPrereqs = (
   "Dist::Zilla::Role::PrereqSource" => 0,
   "Dist::Zilla::Util::EmulatePhase" => 0,
+  "Dist::Zilla::Util::Test::KENTNL" => "1.003001",
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
   "Module::Data" => 0,
   "Moose" => 0,
+  "Test::DZil" => 0,
   "Test::More" => "0.89",
   "strict" => 0,
   "utf8" => 0,
