@@ -59,6 +59,9 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Removed / runtime requires]
  - utf8
 
+ [Removed / test requires]
+ - Dist::Zilla::Util::Test::KENTNL 1.003001
+
 1.001000 2014-08-30T12:52:09Z
  [Added / develop requires]
  - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.001001
