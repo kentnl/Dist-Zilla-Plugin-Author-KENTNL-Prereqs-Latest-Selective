@@ -1,6 +1,14 @@
 Release history for Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective
 
-1.001001 2014-08-30T12:54:01Z
+1.001001 2017-03-09T08:03:05Z 0c4d3e4
+ - Bugfix: Avoid test failures with -Ddefault_inc_excludes_dot
+
+ [Dependencies::Stats]
+ - Dependencies changed since 1.001000, see misc/*.deps* for details
+ - configure: +1 (recommends: ↑1)
+ - develop: +13 ↑4 -3 (recommends: +1, suggests: ↑2)
+ - runtime: (recommends: +1)
+ - test: +1 ↓1 (recommends: ↑1 ↓1)
 
 1.001000 2014-08-30T12:52:09Z
  [00 Minor]
@@ -101,4 +109,3 @@ Release history for Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective
 
 0.1.0 2012-07-07T08:44:42Z
  - First version.
-
