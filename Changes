@@ -1,6 +1,6 @@
 Release history for Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective
 
-1.001001 2017-03-09T08:10:03Z ffa2bc8
+1.001001 2017-03-09T08:10:59Z 4ac6519
  - Bugfix: Avoid test failures with -Ddefault_inc_excludes_dot
  - Avoid use of Test::KENTNL in tests
 

@@ -21,7 +21,6 @@ $zilla->build;
 
 my $dm = $zilla->distmeta->{prereqs}->{runtime};
 ok( exists $dm->{requires}->{'Test::More'}, "Test::More is required" ) or diag explain $dm;
-require Test::More;
 if ( eval { Test::More->VERSION('0.90'); 1; } ) {
   isnt( $dm->{requires}->{'Test::More'}, '0.89', "Test::More is better than 0.89" );
 }
