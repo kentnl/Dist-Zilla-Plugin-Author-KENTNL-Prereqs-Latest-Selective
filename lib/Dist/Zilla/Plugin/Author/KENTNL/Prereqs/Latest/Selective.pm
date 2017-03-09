@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective;
 
-our $VERSION = '1.001001';
+our $VERSION = '1.001002';
 
 # ABSTRACT: [DEPRECATED] Selectively upgrade a few modules to depend on the version used.
 
@@ -165,7 +165,7 @@ Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective - [DEPRECATED] S
 
 =head1 VERSION
 
-version 1.001001
+version 1.001002
 
 =head1 SYNOPSIS
 

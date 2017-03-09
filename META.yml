@@ -21,7 +21,7 @@ name: Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective
 provides:
   Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/Prereqs/Latest/Selective.pm
-    version: '1.001001'
+    version: '1.001002'
 recommends:
   Moose: '2.000'
 requires:
@@ -35,4 +35,4 @@ resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective/issues
   homepage: https://github.com/kentnl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective
   repository: https://github.com/kentnl/Dist-Zilla-Plugin-Author-KENTNL-Prereqs-Latest-Selective.git
-version: '1.001001'
+version: '1.001002'
