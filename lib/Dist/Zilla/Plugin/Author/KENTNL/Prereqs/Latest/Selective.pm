@@ -15,6 +15,9 @@ use Module::Data;
 
 with 'Dist::Zilla::Role::PrereqSource';
 
+__PACKAGE__->meta->make_immutable;
+no Moose;
+
 =begin MetaPOD::JSON v1.1.0
 
 {
@@ -147,9 +150,6 @@ sub register_prereqs {
   );
   return;
 }
-
-__PACKAGE__->meta->make_immutable;
-no Moose;
 
 1;
 
