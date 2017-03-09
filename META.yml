@@ -3,7 +3,6 @@ abstract: '[DEPRECATED] Selectively upgrade a few modules to depend on the versi
 author:
   - 'Kent Fredric <kentnl@cpan.org>'
 build_requires:
-  Dist::Zilla::Util::Test::KENTNL: '1.003001'
   ExtUtils::MakeMaker: '0'
   File::Spec: '0'
   Test::DZil: '0'
